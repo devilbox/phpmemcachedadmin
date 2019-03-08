@@ -44,17 +44,6 @@ if(basename($_SERVER['PHP_SELF']) == 'commands.php')
         <a href="commands.php">Execute Commands on Servers</a>
 <?php
 }?>
-        |
-<?php
-# Configure view
-if(basename($_SERVER['PHP_SELF']) == 'configure.php')
-{ ?>
-        Editing Configuration
-<?php
-} else { ?>
-        <a href="configure.php">Edit Configuration</a>
-<?php
-} ?>
     </div>
 <?php
 if (is_writable($_ini->get('file_path')) === false) {
@@ -64,19 +53,7 @@ if (is_writable($_ini->get('file_path')) === false) {
     </div>
 <?php
 }
-if (file_exists($_ini->path()) === false) {
-?>
-    <div class="header corner full-size padding" style="margin-top:10px;">
-        Error : Configuration file or folder is missing, please fix this error and try again.
-    </div>
-<?php
-} elseif (is_writable($_ini->path()) === false) {
-?>
-    <div class="header corner full-size padding" style="margin-top:10px;">
-        Error : Configuration file or folder is not writable, please fix this error and try again.
-    </div>
-<?php
-} ?>
+ ?>
 
 <!--[if IE]>
 <div class="header corner full-size padding" style="text-align:center;margin-top:10px;">
